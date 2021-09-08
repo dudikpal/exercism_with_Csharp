@@ -37,6 +37,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LuciansLusciousLasagna", "l
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnnalynsInfiltration", "annalyns-infiltration\AnnalynsInfiltration.csproj", "{4D9790B4-68F0-439C-858F-D4BD484EBD2F}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogLevels", "log-levels\LogLevels.csproj", "{790DC9ED-2146-4A08-B99F-54BEF1E61DC6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarsAssemble", "cars-assemble\CarsAssemble.csproj", "{98A74B96-3F91-4C2D-A543-D8E41E39C928}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -111,6 +115,14 @@ Global
 		{4D9790B4-68F0-439C-858F-D4BD484EBD2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D9790B4-68F0-439C-858F-D4BD484EBD2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D9790B4-68F0-439C-858F-D4BD484EBD2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{790DC9ED-2146-4A08-B99F-54BEF1E61DC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{790DC9ED-2146-4A08-B99F-54BEF1E61DC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{790DC9ED-2146-4A08-B99F-54BEF1E61DC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{790DC9ED-2146-4A08-B99F-54BEF1E61DC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98A74B96-3F91-4C2D-A543-D8E41E39C928}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98A74B96-3F91-4C2D-A543-D8E41E39C928}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98A74B96-3F91-4C2D-A543-D8E41E39C928}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98A74B96-3F91-4C2D-A543-D8E41E39C928}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
