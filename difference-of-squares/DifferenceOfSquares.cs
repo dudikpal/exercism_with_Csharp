@@ -1,25 +1,19 @@
 ﻿using System;
+using System.Linq;
 
 public static class DifferenceOfSquares
 {
     public static int CalculateSquareOfSum(int max)
     {
-        int sum = 0;
-        for (int i = 1; i <= max; i++)
-        {
-            sum += i;
-        }
-        return (int)Math.Pow(sum, 2);
+        return (int)Math.Pow(Enumerable.Range(1, max)
+            .Aggregate(0, (prev, actual) => prev + actual), 2);
+            
     }
 
     public static int CalculateSumOfSquares(int max)
     {
-        int sum = 0;
-        for (int i = 1; i <= max; i++)
-        {
-            sum += i * i;
-        }
-        return sum;
+        return Enumerable.Range(1, max)
+            .Aggregate(0, (prev, actual) => prev + (int)Math.Pow(actual, 2));
     }
 
     public static int CalculateDifferenceOfSquares(int max)
