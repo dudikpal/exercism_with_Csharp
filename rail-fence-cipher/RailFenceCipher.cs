@@ -38,19 +38,50 @@ public class RailFenceCipher
 
     private string decodeString(string input)
     {
-        int[] arrayIndexWithPlusLetter = new int[input.Length % rails];
-        for (int i = 0; i < input.Length % rails; i++)
+        int sampleLength = (rails * 2) - 2;
+        int remain = input.Length % sampleLength;
+        int baseLength = (input.Length - remain) / sampleLength;
+        int[] arraysLength = new int[rails];
+        int verticalMove = 0;
+        bool increase = true;
+        List<char>[] encodedArrays = new List<char>[rails];
+        for (int i = 0; i < remain; i++)
         {
-            arrayIndexWithPlusLetter[i] = i;
-        }
+            if (i < rails)
+            {
+                if (i == 0 || i == rails - 1)
+                {
+                    arraysLength[i] = baseLength;
+                }
+                else
+                {
+                    arraysLength[i] = baseLength * 2;
+                }
+            }
+            if (verticalMove == rails - 1)
+            {
+                increase = false;
+            }
+            else if (verticalMove == 0)
+            {
+                increase = true;
+            }
 
-        string[] lines = new string[rails];
-        for (int i = 0; i < rails; i++)     
-        {
-            int 
-            lines[i] = input.
+            arraysLength[i]++;
+
+            if (increase)
+            {
+                verticalMove++;
+            }
+            else
+            {
+                verticalMove--;
+            }
         }
-        Console.WriteLine(arrayIndexWithPlusLetter);
+        
+        
+        Console.WriteLine(arraysLength);
+        
         return null;
     }
     
