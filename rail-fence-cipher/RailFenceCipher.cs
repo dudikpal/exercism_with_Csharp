@@ -7,28 +7,21 @@ using System.Text.RegularExpressions;
 
 public class RailFenceCipher
 {
-    /*public static void Main(string[] args)
-
-    {
-        RailFenceCipher start = new RailFenceCipher(3);
-        Console.WriteLine(start.Encode("WE ARE DISCOVERED FLEE AT ONCE"));
-
-    }*/
-
     private int rails;
     private List<char>[] message;
 
+    
     public RailFenceCipher(int rails)
     {
         this.rails = rails;
     }
 
 
-
     public string Encode(string input)
     {
         return encodeString(input, true, 0);
     }
+    
 
     public string Decode(string input)
     {
@@ -45,21 +38,22 @@ public class RailFenceCipher
         int verticalMove = 0;
         bool increase = true;
         List<char>[] encodedArrays = new List<char>[rails];
+
+        for (int i = 0; i < arraysLength.Length - 1; i++)
+        {
+            if (i == 0)
+            {
+                arraysLength[0] = baseLength;
+                arraysLength[arraysLength.Length - 1] = baseLength;
+            }
+            else
+            {
+                arraysLength[i] = baseLength * 2;
+            }
+        }
         
         for (int i = 0; i < remain; i++)
         {
-            if (i < rails)
-            {
-                if (i == 0)
-                {
-                    arraysLength[i] = baseLength;
-                    arraysLength[rails - 1] = baseLength;
-                }
-                else
-                {
-                    arraysLength[i] = baseLength * 2;
-                }
-            }
             if (verticalMove == rails - 1)
             {
                 increase = false;
@@ -82,6 +76,7 @@ public class RailFenceCipher
         }
 
         int startPosition = 0;
+        
         for (int i = 0; i < arraysLength.Length; i++)
         {
             int length = arraysLength[i];
@@ -92,6 +87,7 @@ public class RailFenceCipher
         verticalMove = 0;
         increase = true;
         StringBuilder sb = new StringBuilder();
+        
         for (int i = 0; i < input.Length; i++)
         {
             if (verticalMove == rails - 1)
@@ -105,6 +101,7 @@ public class RailFenceCipher
 
             sb.Append(encodedArrays[verticalMove][0]);
             encodedArrays[verticalMove].RemoveAt(0);
+            
             if (increase)
             {
                 verticalMove++;
@@ -114,9 +111,9 @@ public class RailFenceCipher
                 verticalMove--;
             }
         }
-
         return sb.ToString();
     }
+    
     
     private string encodeString(string input, bool increase, int verticalMove)
     {
